@@ -1,5 +1,7 @@
 
 var BamazonCustomer= require("./bamazoncustomer");
+var BamazonManager = require("./bamazonmanager");
+
 
 var userInput = process.argv[2]
 
@@ -10,7 +12,7 @@ switch (userInput){
     break;
 
     case 'manager':
-    console.log("work in progress");
+    BamazonManager();
     break;
 
 }

@@ -53,16 +53,11 @@ function BamazonCustomer() {
                         name: "quantity",
                         type: "input",
                         message: function (answers) {
-                            // let customQuantity = answers.products.split(' | ')[1];
                             let customQuantity = answers.quantity;
-
-
                             return "Enter the quantity for" + " " + answers.product.split('|')[1] + ":";
                         },
                         validate: function validateOrder(customQuantity) {
                             let reg = /^([1-9]|10)$/;
-
-
                             return reg.test(customQuantity) || "Please enter a valid ItemId";
 
                         }
@@ -124,14 +119,14 @@ function BamazonCustomer() {
 
             }).then(answers => {
 
-                switch (answers.anotherOrder){
+                switch (answers.anotherOrder) {
                     case 'NO':
-                    connection.end();
-                    break;
+                        connection.end();
+                        break;
 
                     case 'YES':
-                    getList();
-                    break;
+                        getList();
+                        break;
                 }
             })
     }
